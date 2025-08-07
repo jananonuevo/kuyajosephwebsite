@@ -6,7 +6,7 @@ const Hero = ({ openModal }: HeroProps) => {
 
   return (
     // The main container uses min-h-screen to ensure it takes at least the full viewport height.
-    <div className="relative w-full min-h-screen bg-[url(./public/intropic.jpg)] bg-no-repeat bg-cover bg-center">
+    <div className="relative w-full min-h-screen bg-[url(/public/intropic.jpg)] bg-no-repeat bg-cover bg-center">
       {/* The overlay opacity is now 40% for better readability on various devices */}
       <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
 
