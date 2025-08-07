@@ -42,7 +42,7 @@ const Hero = ({ openModal }: HeroProps) => {
                   border-white 
                   hover:border-transparent 
                   rounded-lg 
-                  text-[0.7em] 
+                  text-lg 
                   transition-colors 
                   duration-300">Inquire Now!</button>
         </div>
