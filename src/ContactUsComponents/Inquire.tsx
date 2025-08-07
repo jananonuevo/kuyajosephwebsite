@@ -17,7 +17,7 @@ function Inquire() {
 
       <div className = "hidden sm:hidden md:hidden lg:block">
         <div className = "flex justify-center items-center h-4/5">
-          <div className = "py-50 px-40 bg-[url(./public/hindiikawtokuyaHAHAH.jpg)] bg-no-repeat bg-cover bg-center mt-15"> </div>
+          <div className = "py-50 px-40 bg-[url(/public/hindiikawtokuyaHAHAH.jpg)] bg-no-repeat bg-cover bg-center mt-15"> </div>
         </div>
       </div>
      </div> 

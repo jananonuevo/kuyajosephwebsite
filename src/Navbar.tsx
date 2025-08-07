@@ -24,7 +24,7 @@ const Navbar = () => {
       <nav className="max-w-[85rem] w-full mx-auto sm:flex sm:items-center sm:justify-between py-3 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <a className="flex-none font-semibold text-xl sm:text-lg text-white focus:outline-none focus:opacity-80 py-2" href="#" aria-label="Brand">
-            <img src="./public/alveologo.png" alt="Company Logo" className="h-5" />
+            <img src="/public/alveologo.png" alt="Company Logo" className="h-5" />
           </a>
           <div className="sm:hidden">
             <button

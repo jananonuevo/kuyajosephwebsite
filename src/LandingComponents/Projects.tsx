@@ -14,14 +14,14 @@ function Projects() {
 
     <div className = "grid gap-20 sm:grid-cols-1 xl:grid-cols-2 md:items-center lg:items-center text-center mt-15">
       <div className = "">
-        <div className = "sm:h-120 h-64 bg-[url(./public/astela3.jpg)] bg-no-repeat bg-cover bg-center"> </div>
+        <div className = "sm:h-120 h-64 bg-[url(/public/astela3.jpg)] bg-no-repeat bg-cover bg-center"> </div>
         <p className="text-center font-bold text-lg mt-10 text-[#444444]">Astela</p>
         <p className="text-center mx-5 mt-3 text-[#444444]"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, dui eget porta eleifend, purus purus vulputate nisi, sed varius nisi odio sed enim.</p>
         <Link to="/astela"><p className="text-center underline mt-5 text-[#444444] hover:no-underline transition-[text-decoration] duration-300">Read more</p></Link>
       </div>      
       
       <div className = "">
-        <div className = "sm:h-120 h-64 bg-[url(./public/mergent2.jpg)] bg-no-repeat bg-cover bg-center"> </div>
+        <div className = "sm:h-120 h-64 bg-[url(/public/mergent2.jpg)] bg-no-repeat bg-cover bg-center"> </div>
         <p className="text-center font-bold text-lg mt-10 text-[#444444]">Mergent</p>
         <p className="text-center mx-5 mt-3 text-[#444444]"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, dui eget porta eleifend, purus purus vulputate nisi, sed varius nisi odio sed enim.</p>
         <Link to="/mergent"><p className="text-center underline mt-5 text-[#444444] hover:no-underline transition-[text-decoration] duration-300">Read more</p></Link>

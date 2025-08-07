@@ -14,7 +14,7 @@ function ContactInfo() {
       
       <div className = "">
         <div className = "flex justify-center items-center">
-          <div className = "w-30 h-30 bg-[url(./public/telephone.png)] bg-no-repeat bg-cover bg-center"> </div>
+          <div className = "w-30 h-30 bg-[url(/public/telephone.png)] bg-no-repeat bg-cover bg-center"> </div>
         </div>
         <p className="text-center font-bold text-lg mt-5">Phone Number</p>
         <p className="text-center mx-10 mt-3">Reach out through my phone number which is also available via Viber or WhatsApp</p>
@@ -23,7 +23,7 @@ function ContactInfo() {
       
       <div className = "">
         <div className = "flex justify-center items-center">
-          <div className = "w-30 h-30 bg-[url(./public/mail.png)] bg-no-repeat bg-cover bg-center"> </div>
+          <div className = "w-30 h-30 bg-[url(/public/mail.png)] bg-no-repeat bg-cover bg-center"> </div>
         </div>
         <p className="text-center font-bold text-lg mt-5">Email</p>
         <p className="text-center mx-10 mt-3">We can also communicate through my email, which is my main mode of communication should you wish to have a copy of the computations and brochures</p>

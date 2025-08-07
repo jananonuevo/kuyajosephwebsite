@@ -5,7 +5,7 @@ function Intro() {
     
     <div className = "flex flex-row justify-center text-center mt-20">
       <div className = "w-150">
-        <div className = "h-20 bg-[url(./public/mergentlogo.png)] bg-no-repeat bg-contain bg-center"> </div>
+        <div className = "h-20 bg-[url(/public/mergentlogo.png)] bg-no-repeat bg-contain bg-center"> </div>
         <h1 className = "text-2xl text-center font-bold mt-5 text-[#444444]">
           Multitudes of Experience at your Door
         </h1>

@@ -11,7 +11,7 @@ function Inquire() {
       </div>
 
       <div className = "border-1 border-white">
-        <div className = "h-full bg-[url(./public/pexels-a-darmel-7641861.jpg)] bg-no-repeat bg-cover bg-center"> </div>
+        <div className = "h-full bg-[url(/public/pexels-a-darmel-7641861.jpg)] bg-no-repeat bg-cover bg-center"> </div>
       </div>
     </div>
 
