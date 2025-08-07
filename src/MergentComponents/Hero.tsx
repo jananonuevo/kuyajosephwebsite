@@ -14,7 +14,7 @@ const Hero = ({ openModal }: HeroProps) => {
         {/* The content container width is now responsive. It's full-width on mobile, then scales up. */}
         <div className="">
           {/* The title font size is now responsive, scaling from a small size to a large one on bigger screens. */}
-          <h1 className="text-center font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl">Mergent Residences by Alveo</h1>
+          <h1 className="text-center font-bold text-4xl sm:text-4xl md:text-5xl lg:text-6xl">Mergent Residences by Alveo</h1>
           {/* Paragraph font size and margin are also responsive. */}
           <p className="text-center lg:block hidden mt-3 lg:mt-10 lg:mx-10 lg:text-2xl lg:leading-10">
             Alveo Land’s first residential development
@@ -31,8 +31,8 @@ linger, and uncover vibrant encounters.</p>
                   text-white 
                   font-semibold 
                   hover:text-black 
-                  py-2 
-                  px-5 
+                  py-3 
+                  px-6 
                   sm:py-2 
                   sm:px-8 
                   md:px-12 
@@ -43,7 +43,7 @@ linger, and uncover vibrant encounters.</p>
                   border-white 
                   hover:border-transparent 
                   rounded-lg 
-                  text-[0.2em] 
+                  text-lg
                   transition-colors 
                   duration-300">Inquire Now!</button>
         </div>
