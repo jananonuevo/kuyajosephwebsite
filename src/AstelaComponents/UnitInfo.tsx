@@ -3,8 +3,8 @@ function UnitInfo() {
   return (
     <>
 
-  <div className = "mx-15"> 
-    <h1 className = "text-4xl text-center font-bold mt-10 mb-5 text-[#444444]">
+  <div className = ""> 
+    <h1 className = "mx-15 text-4xl text-center font-bold mt-10 mb-5 text-[#444444]">
       Unit Options
     </h1>
 
