@@ -1,0 +1,107 @@
+import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsProjectsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsProjectsDropdownOpen(false);
+    }, 200);
+  };
+
+  return (
+    <header className="w-full text-sm bg-[#27374D]">
+      <nav className="max-w-[85rem] w-full mx-auto sm:flex sm:items-center sm:justify-between py-3 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          <a className="flex-none font-semibold text-xl sm:text-lg text-white focus:outline-none focus:opacity-80 py-2" href="#" aria-label="Brand">
+            <img src="./public/alveologo.png" alt="Company Logo" className="h-5" />
+          </a>
+          <div className="sm:hidden">
+            <button
+              type="button"
+              className="inline-flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-md hover:text-gray-400 focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-controls="mobile-menu"
+              aria-expanded={isOpen}
+            >
+              <span className="sr-only">Open main menu</span>
+              {!isOpen ? (
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+        <div
+          id="mobile-menu"
+          className={`${
+            isOpen ? 'block' : 'hidden'
+          } sm:block sm:flex sm:flex-row sm:items-center sm:justify-end sm:gap-5 absolute sm:static bg-[#27374D] w-full left-0 z-20 transition-all duration-300 ease-in-out`}
+        >
+          <div className="flex flex-col gap-5 p-4 sm:flex-row sm:p-0">
+            <Link className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400" to="/">
+              Home
+            </Link>
+            
+            <div
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                className="w-full text-left font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400 sm:w-auto"
+                onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
+              >
+                Projects
+                <svg className="h-4 w-4 inline-block ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+              <div
+                className={`${isProjectsDropdownOpen ? 'block' : 'hidden'} sm:absolute sm:mt-2 sm:w-48 sm:bg-white sm:rounded-md sm:shadow-lg sm:z-10`}
+              >
+                <div className="py-1 flex flex-col sm:block">
+                  <Link
+                    to="./astela"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 sm:text-base sm:text-black sm:hover:bg-gray-100"
+                    onClick={() => setIsProjectsDropdownOpen(false)}
+                  >
+                    Astela
+                  </Link>
+                  <Link
+                    to="./mergent"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 sm:text-base sm:text-black sm:hover:bg-gray-100"
+                    onClick={() => setIsProjectsDropdownOpen(false)}
+                  >
+                    Mergent
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <Link className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400" to="/contactus">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default Navbar;
