@@ -22,7 +22,7 @@ to chill out and connect.</p>
       </div>      
      </div>
 
-     <div className="flex justify-center"> 
+     <div className="flex justify-center mt-5"> 
       <div className = "w-96 mx-20">
         <div className = "max-w-96 h-64 bg-[url(/public/amenityfloor-mergent.png)] bg-no-repeat bg-contain bg-center"> </div>
         <p className="text-center font-bold text-lg text-[#444444] mt-7">Residential Floor (11th to 47th floor)</p>
