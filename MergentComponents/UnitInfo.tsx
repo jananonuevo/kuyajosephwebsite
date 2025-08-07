@@ -1,0 +1,154 @@
+function UnitInfo() {
+
+  return (
+    <>
+
+  <div className = "mx-15"> 
+    <h1 className = "text-4xl text-center font-bold mt-10 mb-5 text-[#444444]">
+      Unit Options
+    </h1>
+
+    <p className = "text-lg text-center mt-10 mx-10 text-[#444444]"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, dui eget porta eleifend, purus purus vulputate nisi, sed varius nisi odio sed enim. Quisque venenatis leo ut neque pulvinar, quis dignissim elit pharetra. Morbi a consectetur felis. Praesent vitae viverra lacus. Sed pellentesque nec nisl sit amet tempus. Aenean porttitor, risus id mattis placerat,</p>
+
+    <div className = "grid gap-20 sm:grid-cols-1 xl:grid-cols-2 mt-10">
+    
+    <div className = "flex justify-center items-center">
+      <div className = "w-96 text-center">
+        <p className="text-center font-bold text-lg mt-5 text-[#444444]">Studio Unit</p>
+        <center><hr className="mt-5 mb-5"></hr></center>
+        <div className = "grid grid-cols-2">
+          <p className="mx-5 mt-3 text-[#444444]">Living / Dining / Sleeping Area</p>
+          <p className="mx-5 mt-3 text-[#444444]">17-19 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Kitchen</p>
+          <p className="mx-5 mt-3 text-[#444444]">7-8 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Common Toilet & Bath</p>
+          <p className="mx-5 mt-3 text-[#444444]">4 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Balcony</p>
+          <p className="mx-5 mt-3 text-[#444444]">3 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Utility</p>
+          <p className="mx-5 mt-3 text-[#444444]">1 sq. m.</p>
+          <p className="mx-5 mt-3 font-bold text-[#444444]">TOTAL</p>
+          <p className="mx-5 mt-3 font-bold text-[#444444]">33 - 35 sq. m.</p>
+        </div>
+      </div>
+    </div>
+
+    <div className = "flex justify-center items-center">
+      <div className = "w-96 text-center">
+        <p className="text-center font-bold text-lg mt-5 text-[#444444]">Jr. 1-Bedroom Unit</p>
+        <center><hr className="mt-5 mb-5"></hr></center>
+        <div className = "grid grid-cols-2">
+          <p className="mx-5 mt-3 text-[#444444]">Living / Dining Area</p>
+          <p className="mx-5 mt-3 text-[#444444]">16 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Kitchen</p>
+          <p className="mx-5 mt-3 text-[#444444]">6 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Bedroom</p>
+          <p className="mx-5 mt-3 text-[#444444]">16 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Toilet & Bath</p>
+          <p className="mx-5 mt-3 text-[#444444]">4 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Utility Room</p>
+          <p className="mx-5 mt-3 text-[#444444]">1 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Balcony & ACCU</p>
+          <p className="mx-5 mt-3 text-[#444444]">3 sq. m.</p>
+          <p className="mx-5 mt-3 font-bold text-[#444444]">TOTAL</p>
+          <p className="mx-5 mt-3 font-bold text-[#444444]">46 sq. m.</p>
+        </div>
+      </div>
+    </div>
+
+    <div className = "flex justify-center items-center">
+      <div className = "w-96 text-center">
+        <p className="text-center font-bold text-lg mt-5 text-[#444444]">1-Bedroom Unit</p>
+        <center><hr className="mt-5 mb-5"></hr></center>
+        <div className = "grid grid-cols-2">
+          <p className="mx-5 mt-3 text-[#444444]">Foyer</p>
+          <p className="mx-5 mt-3 text-[#444444]">6 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Kitchen</p>
+          <p className="mx-5 mt-3 text-[#444444]">6 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Living / Dining Area</p>
+          <p className="mx-5 mt-3 text-[#444444]">24 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Toilet & Bath</p>
+          <p className="mx-5 mt-3 text-[#444444]">5 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Utility Zone</p>
+          <p className="mx-5 mt-3 text-[#444444]">3 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Bedroom</p>
+          <p className="mx-5 mt-3 text-[#444444]">16 sq. m.</p>
+          <p className="mx-5 mt-3 text-[#444444]">Balcony</p>
+          <p className="mx-5 mt-3 text-[#444444]">5 sq. m.</p>
+          <p className="mx-5 mt-3 font-bold text-[#444444]">TOTAL</p>
+          <p className="mx-5 mt-3 font-bold text-[#444444]">65 sq. m.</p>
+        </div>
+      </div>
+    </div>
+
+    <div className = "flex justify-center items-center">
+      <div className = "w-96 text-center">
+        <p className="text-center font-bold text-lg mt-5 text-[#444444]">Jr. 2-Bedroom Unit</p>
+        <center><hr className="mt-5 mb-5"></hr></center>
+        <div className = "grid grid-cols-2 text-[#444444]">
+          <p className="mx-5 mt-3">Foyer</p>
+          <p className="mx-5 mt-3">5 sq. m.</p>
+          <p className="mx-5 mt-3">Living / Dining Area</p>
+          <p className="mx-5 mt-3">23 sq. m.</p>
+          <p className="mx-5 mt-3">Kitchen</p>
+          <p className="mx-5 mt-3">7 sq. m.</p>
+          <p className="mx-5 mt-3">Master Bedroom</p>
+          <p className="mx-5 mt-3">14 sq. m.</p>
+          <p className="mx-5 mt-3">Bedroom 1</p>
+          <p className="mx-5 mt-3">12 sq. m.</p>
+          <p className="mx-5 mt-3">Common Toilet & Bath</p>
+          <p className="mx-5 mt-3">7 sq. m.</p>
+          <p className="mx-5 mt-3">Utility Room</p>
+          <p className="mx-5 mt-3">1 sq. m.</p>
+          <p className="mx-5 mt-3">Corridor</p>
+          <p className="mx-5 mt-3">1 sq. m.</p>
+          <p className="mx-5 mt-3">Balcony</p>
+          <p className="mx-5 mt-3">5 sq. m.</p>
+          <p className="mx-5 mt-3 font-bold">TOTAL</p>
+          <p className="mx-5 mt-3 font-bold">75 sq. m.</p>
+        </div>
+      </div>
+    </div>
+
+    <div className = "flex justify-center items-center">
+      <div className = "w-96 text-center">
+        <p className="text-center font-bold text-lg mt-5 text-[#444444]">2-Bedroom Unit</p>
+        <center><hr className="mt-5 mb-5"></hr></center>
+        <div className = "grid grid-cols-2 text-[#444444]">
+          <p className="mx-5 mt-3">Foyer</p>
+          <p className="mx-5 mt-3">7 sq. m.</p>
+          <p className="mx-5 mt-3">Kitchen</p>
+          <p className="mx-5 mt-3">7-8 sq. m.</p>
+          <p className="mx-5 mt-3">Living / Dining Area</p>
+          <p className="mx-5 mt-3">24-26 sq. m.</p>
+          <p className="mx-5 mt-3">Corridor</p>
+          <p className="mx-5 mt-3">4 sq. m.</p>
+          <p className="mx-5 mt-3">Common Toilet & Bath</p>
+          <p className="mx-5 mt-3">4 sq. m.</p>
+          <p className="mx-5 mt-3">Master Bedroom</p>
+          <p className="mx-5 mt-3">16-20 sq. m.</p>
+          <p className="mx-5 mt-3">Master Toilet & Bath</p>
+          <p className="mx-5 mt-3">5 sq. m.</p>
+          <p className="mx-5 mt-3">Bedroom 1</p>
+          <p className="mx-5 mt-3">11-12 sq. m.</p>
+          <p className="mx-5 mt-3">Maid's Room</p>
+          <p className="mx-5 mt-3">8 sq. m.</p>
+          <p className="mx-5 mt-3">Maid's Toilet & Bath</p>
+          <p className="mx-5 mt-3">2-5 sq. m.</p>
+          <p className="mx-5 mt-3">Juliet Balcony or ACCU Balcony</p>
+          <p className="mx-5 mt-3">3, 2 sq. m.</p>
+          <p className="mx-5 mt-3">Balcony</p>
+          <p className="mx-5 mt-3">5 sq. m.</p>
+          <p className="mx-5 mt-3 font-bold">TOTAL</p>
+          <p className="mx-5 mt-3 font-bold">96 - 106 sq. m.</p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div> 
+    </>
+  )
+}
+
+export default UnitInfo
