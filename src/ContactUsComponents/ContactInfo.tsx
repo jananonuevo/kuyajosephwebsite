@@ -3,8 +3,8 @@ function ContactInfo() {
   return (
     <>
 
-  <div className = "mx-15"> 
-    <h1 className = "text-4xl text-center font-bold mt-25">
+  <div className = ""> 
+    <h1 className = "mx-15 text-4xl text-center font-bold mt-25">
         Contact Information
     </h1>
 
