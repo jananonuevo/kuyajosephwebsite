@@ -22,7 +22,7 @@ in Poblacion, Makati opens spaces to connect,
 linger, and uncover vibrant encounters.</p>
         </div>
         {/* The button container margin is also responsive. */}
-        <div className="flex justify-center mt-3 sm:mt-5 md:mt-10">
+        <div className="flex justify-center mt-5 sm:mt-5 md:mt-10">
           <button onClick={openModal} 
           className="
                   cursor-pointer 
