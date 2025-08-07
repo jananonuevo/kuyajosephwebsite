@@ -24,7 +24,7 @@ const Navbar = () => {
       <nav className="max-w-[85rem] w-full mx-auto sm:flex sm:items-center sm:justify-between py-3 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <a className="flex-none font-semibold text-xl sm:text-lg text-white focus:outline-none focus:opacity-80 py-2" href="#" aria-label="Brand">
-            <img src="/alveologo.png" alt="Company Logo" className="h-5" />
+            <img src="../public/alveologo.png" alt="Company Logo" className="h-5" />
           </a>
           <div className="sm:hidden">
             <button
@@ -78,14 +78,14 @@ const Navbar = () => {
                 <div className="py-1 flex flex-col sm:block">
                   <Link
                     to="./astela"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 sm:text-base sm:text-black sm:hover:bg-gray-100"
+                    className="block px-4 py-2 text-sm text-white hover:bg-gray-100 sm:text-base sm:text-gray-700 sm:hover:bg-gray-100"
                     onClick={() => setIsProjectsDropdownOpen(false)}
                   >
                     Astela
                   </Link>
                   <Link
                     to="./mergent"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 sm:text-base sm:text-black sm:hover:bg-gray-100"
+                    className="block px-4 py-2 text-sm text-white hover:bg-gray-100 sm:text-base sm:text-gray-700 sm:hover:bg-gray-100"
                     onClick={() => setIsProjectsDropdownOpen(false)}
                   >
                     Mergent
