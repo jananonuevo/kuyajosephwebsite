@@ -30,8 +30,8 @@ const Hero = ({ openModal }: HeroProps) => {
                   text-white 
                   font-semibold 
                   hover:text-black 
-                  py-5 
-                  px-8 
+                  py-3 
+                  px-6 
                   sm:py-2 
                   sm:px-8 
                   md:px-12 
