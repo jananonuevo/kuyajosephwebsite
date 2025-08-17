@@ -7,7 +7,7 @@ function Location() {
       Project Location
     </h1>
 
-    <p className = "text-lg text-center mt-10 ml-10 mr-10 text-[#444444]"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, dui eget porta eleifend, purus purus vulputate nisi, sed varius nisi odio sed enim. Quisque venenatis leo ut neque pulvinar, quis dignissim elit pharetra. Morbi a consectetur felis. Praesent vitae viverra lacus. Sed pellentesque nec nisl sit amet tempus. Aenean porttitor, risus id mattis placerat,</p>
+    <p className = "text-lg text-center mt-10 ml-10 mr-10 text-[#444444]"> Astela is located within Circuit Makati, a 21-hectare mixed-use district in Brgy. Carmona, Makati City. This prime location places it near the city's central business district and provides residents with easy access to a variety of entertainment, retail, and cultural hubs, including Ayala Malls Circuit and the Samsung Performing Arts Theater. </p>
 
 <center>
     <div className="max-w-200 h-96 mt-10">

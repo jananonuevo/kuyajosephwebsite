@@ -8,7 +8,7 @@ function UnitInfo() {
       Unit Options
     </h1>
 
-    <p className = "text-lg text-center mt-10 mx-10 text-[#444444]"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, dui eget porta eleifend, purus purus vulputate nisi, sed varius nisi odio sed enim. Quisque venenatis leo ut neque pulvinar, quis dignissim elit pharetra. Morbi a consectetur felis. Praesent vitae viverra lacus. Sed pellentesque nec nisl sit amet tempus. Aenean porttitor, risus id mattis placerat,</p>
+    <p className = "text-lg text-center mt-10 mx-10 text-[#444444]"> Astela, a residential project by Alveo Land in Circuit Makati, offers a variety of modern condominium units including studios, and one, two, and three-bedroom layouts. Each unit is designed with a balcony, spacious interiors, and high-quality finishes to provide a comfortable urban living experience. </p>
 
     <div className = "grid gap-20 sm:grid-cols-1 xl:grid-cols-2 mt-10">
     
