@@ -15,7 +15,7 @@ function GeneralInfo() {
       </div>      
       
       <div className = "mx-10">
-        <h1 className="text-center font-bold text-9xl mt-5">2026</h1>
+        <h1 className="text-center font-bold text-9xl mt-5">2028</h1>
         <p className="text-center mx-5 mt-3 text-2xl">Turnover Year</p>
       </div> 
 

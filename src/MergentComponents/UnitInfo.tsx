@@ -8,7 +8,7 @@ function UnitInfo() {
       Unit Options
     </h1>
 
-    <p className = "text-lg text-center mt-10 mx-10 text-[#444444]"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, dui eget porta eleifend, purus purus vulputate nisi, sed varius nisi odio sed enim. Quisque venenatis leo ut neque pulvinar, quis dignissim elit pharetra. Morbi a consectetur felis. Praesent vitae viverra lacus. Sed pellentesque nec nisl sit amet tempus. Aenean porttitor, risus id mattis placerat,</p>
+    <p className = "text-lg text-center mt-10 mx-10 text-[#444444]"> Mergent Residences is strategically located near your essentials. Century Mall for your essentials, Centuria Medical Makati for your health needs and other more essentials. As the area is famous for its active nightlife, which can attract potential Airbnb customers as Mergent is an exclusive project of Alveo for Airbnb. </p>
 
     <div className = "grid gap-20 sm:grid-cols-1 xl:grid-cols-2 mt-10">
     
