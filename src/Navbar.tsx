@@ -97,6 +97,10 @@ const Navbar = () => {
             <Link className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400" to="/contactus">
               Contact Us
             </Link>
+
+            <Link className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400" to="/signin">
+              Sign In
+            </Link>
           </div>
         </div>
       </nav>

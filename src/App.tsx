@@ -7,6 +7,7 @@ import AstelaProject from './AstelaProject.tsx';
 import MergentProject from './MergentProject.tsx';
 import PEPProject from './PEPProject.tsx';
 import ContactUs from './ContactUs.tsx';
+import SignIn from './SignIn.tsx';
 import InquireNowModal from './InquireNowModal.tsx'; // Ensure the .tsx extension is used
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/mergent" element={<MergentProject openModal={openModal} />} />
         <Route path="/pep" element={<PEPProject openModal={openModal} />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
       <Footer />
     </>
