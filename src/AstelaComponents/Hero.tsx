@@ -1,5 +1,5 @@
 interface HeroProps {
-  openModal: () => void;
+  openModal: () => voids;
 }
 
 const Hero = ({ openModal }: HeroProps) => {
