@@ -17,7 +17,7 @@ const Hero = ({ openModal }: HeroProps) => {
           <h1 className="text-center font-bold text-4xl sm:text-4xl md:text-5xl lg:text-6xl">Alveoland By Joseph Muñoz</h1>
           {/* Paragraph font size and margin are also responsive. */}
           <p className="text-center text-md sm:block mt-5 sm:mt-5 md:mt-10 sm:text-sm mx-4 sm:mx-10 md:text-2xl">
-            Tsake a dive into Alveo's residential projects that will surely elevate not just your place of living, but your lifestyle.
+            Take a dive into Alveo's residential projects that will surely elevate not just your place of living, but your lifestyle.
           </p>
         </div>
         {/* The button container margin is also responsive. */}
