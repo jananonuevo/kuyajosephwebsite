@@ -12,7 +12,7 @@ const Hero = ({ openModal }: HeroProps) => {
 
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white">
         {/* The content container width is now responsive. It's full-width on mobile, then scales up. */}
-        <div className="text-blue-50">
+        <div className="">
           {/* The title font size is now responsive, scaling from a small size to a large one on bigger screens. */}
           <h1 className="text-center font-bold text-4xl sm:text-4xl md:text-5xl lg:text-6xl">The Astela by Alveo</h1>
           {/* Paragraph font size and margin are also responsive. */}
