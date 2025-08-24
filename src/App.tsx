@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Navbar.tsx';
 import Footer from './Footer.tsx';
 import Landing from './Landing.tsx';
@@ -17,10 +17,12 @@ function App() {
   // Functions to open and close the modal
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-
+  const location = useLocation();
+  const hideLayout = location.pathname === "/signin";
   return (
     <>
-      <Navbar />
+
+      {!hideLayout && <Navbar />}
       
       {/* The InquireNowModal is rendered here. It's always in the DOM,
         but its visibility is controlled by the `isOpen` prop.
@@ -38,7 +40,8 @@ function App() {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/signin" element={<SignIn />} />
       </Routes>
-      <Footer />
+      
+      {!hideLayout && <Footer />}
     </>
   );
 }
