@@ -1,6 +1,22 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
+import { useGoogleLogin } from '@react-oauth/google';
 
 function SignIn() {
+
+  const login = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      console.log(tokenResponse);
+      // You can use the token to fetch user data
+      // Example:
+      // const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+      //   headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
+      // });
+      // const data = await res.json();
+      // console.log(data);
+    },
+    onError: (error) => console.log('Login Failed:', error)
+  });
 
   return (
     <>
@@ -24,7 +40,7 @@ function SignIn() {
                   <input type="text" id="bpcode" className="mt-1 text-sm rounded-lg block p-2.5 w-full border-1 border-gray-600" required />
               </label>
 
-              <button className="bg-[#09013d] text-white mt-10 w-full items-center cursor-pointer hover:bg-white font-semibold hover:text-black py-2 border sm:text-md md:text-lg hover:border-transparent rounded-lg text-lg transition-colors duration-300">Sign In</button>
+              <button onClick={() => login()} className="bg-[#09013d] text-white mt-10 w-full items-center cursor-pointer hover:bg-white font-semibold hover:text-black py-2 border sm:text-md md:text-lg hover:border-transparent rounded-lg text-lg transition-colors duration-300">Sign In</button>
             </div>
 
         </div>

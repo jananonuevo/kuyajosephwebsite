@@ -8,7 +8,7 @@ import MergentProject from './MergentProject.tsx';
 import PEPProject from './PEPProject.tsx';
 import ContactUs from './ContactUs.tsx';
 import SignIn from './SignIn.tsx';
-import InquireNowModal from './InquireNowModal.tsx'; // Ensure the .tsx extension is used
+import InquireNowModal from './InquireNowModal.tsx'; 
 
 function App() {
   // State to manage the modal's visibility

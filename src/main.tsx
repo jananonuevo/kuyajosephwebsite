@@ -14,6 +14,10 @@ import './index.css';
 // This makes the routing functionality available to your entire app
 import { BrowserRouter } from 'react-router-dom';
 
+import { GoogleOAuthProvider } from '@react-oauth/google'
+
+const clientId = '655279390543-ce4g000dm0duq97oicvbo3n35i6k624n.apps.googleusercontent.com';
+
 // 5. Find the root element in the HTML file
 const rootElement = document.getElementById('root');
 
@@ -22,9 +26,11 @@ if (rootElement) {
   // The App component is wrapped in <BrowserRouter> and <React.StrictMode>
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <GoogleOAuthProvider clientId={clientId}>
+        <BrowserRouter>
+         <App />
+        </BrowserRouter>
+      </GoogleOAuthProvider>
     </React.StrictMode>
   );
 } else {

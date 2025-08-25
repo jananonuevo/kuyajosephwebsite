@@ -1,8 +1,10 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, use } from 'react';
 import { Link } from 'react-router-dom';
+import { useGoogleLogin } from '@react-oauth/google';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isShown, setShowBoolean] = useState(false);
   const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -18,6 +20,14 @@ const Navbar = () => {
       setIsProjectsDropdownOpen(false);
     }, 200);
   };
+
+  const login = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      console.log(tokenResponse);
+      setShowBoolean(true);
+    },
+    onError: (error) => console.log('Login Failed:', error)
+  });
 
   return (
     <header className="w-full text-sm bg-[#27374D]">
@@ -98,9 +108,9 @@ const Navbar = () => {
               Contact Us
             </Link>
 
-            <Link className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400" to="/signin">
-              Sign In
-            </Link>
+            <a className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400 cursor-pointer" onClick={() => login()}>
+              {isShown ? 'Logout' : 'Sign In'}
+            </a>
           </div>
         </div>
       </nav>

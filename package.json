@@ -11,6 +11,7 @@
     "postinstall": "chmod +x node_modules/.bin/tsc"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.12.2",
     "@tailwindcss/vite": "^4.1.11",
     "firebase": "^12.1.0",
     "framer-motion": "^12.23.12",
