@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Navbar.tsx';
 import Footer from './Footer.tsx';
@@ -9,6 +8,8 @@ import PEPProject from './PEPProject.tsx';
 import ContactUs from './ContactUs.tsx';
 import SignIn from './SignIn.tsx';
 import InquireNowModal from './InquireNowModal.tsx'; 
+import React, { useEffect, useState } from 'react';
+
 
 function App() {
   // State to manage the modal's visibility
@@ -19,6 +20,26 @@ function App() {
   const closeModal = () => setIsModalOpen(false);
   const location = useLocation();
   const hideLayout = location.pathname === "/signin";
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Check if user data exists in localStorage
+    const storedUser = localStorage.getItem('user');
+
+    if (storedUser) {
+      try {
+        // Restore the user state from localStorage
+        setUser(JSON.parse(storedUser));
+        console.log("im logged in!");
+      } catch (e) {
+        console.log("nope, no one's logged in!");
+        console.error("Failed to parse stored user data:", e);
+        // Clear corrupted data
+        localStorage.removeItem('user');
+      }
+    }
+  }, []); // The empty array ensures this runs only once
   return (
     <>
 

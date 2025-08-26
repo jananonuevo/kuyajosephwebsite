@@ -64,7 +64,7 @@ const InquireNowModal: React.FC<InquireNowModalProps> = ({ isOpen, closeModal })
             onClick={closeModal}
             className="text-gray-400 transition-colors duration-200 ease-in-out rounded-lg hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-700 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
             <span className="sr-only">Close modal</span>
@@ -106,7 +106,7 @@ const InquireNowModal: React.FC<InquireNowModalProps> = ({ isOpen, closeModal })
               <label htmlFor="contactNo" className="peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-autopeer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contact Number</label>
             </div>
             <center>
-              <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-15 border border-gray-400 rounded shadow mt-5" type="submit">
+              <button className="cursor-pointer bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-15 border border-gray-400 rounded shadow mt-5" type="submit">
                 Send
               </button>
             </center>

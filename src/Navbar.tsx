@@ -23,11 +23,26 @@ const Navbar = () => {
 
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
-      console.log(tokenResponse);
+      console.log('Login Success!: ', tokenResponse);
+      
+      const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+        headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
+      });
+      const userData = await userInfoResponse.json();
+
+      // Save the user data to localStorage
+      localStorage.setItem('user', JSON.stringify(userData));
+
       setShowBoolean(true);
     },
     onError: (error) => console.log('Login Failed:', error)
   });
+
+  const logout = () => {
+    setShowBoolean(false);
+    localStorage.removeItem('user'); 
+    console.log('User logged out');
+  };
 
   return (
     <header className="w-full text-sm bg-[#27374D]">
@@ -108,9 +123,12 @@ const Navbar = () => {
               Contact Us
             </Link>
 
-            <a className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400 cursor-pointer" onClick={() => login()}>
-              {isShown ? 'Logout' : 'Sign In'}
-            </a>
+            
+              {isShown ? (
+                <a className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400 cursor-pointer" onClick={() => logout()}>  'Logout' </a>
+               ) : ( 
+                <a className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400 cursor-pointer" onClick={() => login()}> 'Sign In' </a>
+               )}
           </div>
         </div>
       </nav>
