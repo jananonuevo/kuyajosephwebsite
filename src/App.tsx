@@ -31,7 +31,7 @@ function App() {
       try {
         // Restore the user state from localStorage
         setUser(JSON.parse(storedUser));
-        console.log("im logged in!");
+        console.log(user, "im logged in!");
       } catch (e) {
         console.log("nope, no one's logged in!");
         console.error("Failed to parse stored user data:", e);
