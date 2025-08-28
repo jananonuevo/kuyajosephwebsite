@@ -8,7 +8,7 @@ import PEPProject from './PEPProject.tsx';
 import ContactUs from './ContactUs.tsx';
 import Inquiries from './Inquiries.tsx';
 import InquireNowModal from './InquireNowModal.tsx'; 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function App() {
