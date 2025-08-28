@@ -1,4 +1,4 @@
-import { useState, useRef, use } from 'react';
+import { useEffect, useState, useRef, use } from 'react';
 import { Link } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
 
@@ -7,6 +7,28 @@ const Navbar = () => {
   const [isShown, setShowBoolean] = useState(false);
   const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [user, setUser] = useState(null);
+  
+  //checks if user is logged in on page load
+  useEffect(() => {
+      // Check if user data exists in localStorage
+      const storedUser = localStorage.getItem('user');
+  
+      if (storedUser) {
+        try {
+          // Restore the user state from localStorage
+          setUser(JSON.parse(storedUser));
+          console.log("im logged in!");
+          setShowBoolean(true);
+        } catch (e) {
+          console.log("nope, no one's logged in!");
+          console.error("Failed to parse stored user data:", e);
+          
+          setShowBoolean(true);
+          localStorage.removeItem('user');
+        }
+      }
+    }, []); // The empty array ensures this runs only once
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -122,13 +144,22 @@ const Navbar = () => {
             <Link className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400" to="/contactus">
               Contact Us
             </Link>
-
             
               {isShown ? (
-                <a className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400 cursor-pointer" onClick={() => logout()}>  'Logout' </a>
-               ) : ( 
-                <a className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400 cursor-pointer" onClick={() => login()}> 'Sign In' </a>
-               )}
+              <> 
+                <a className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400 cursor-pointer" onClick={() => logout()}> 
+                  Logout 
+                </a>
+                <Link to="/inquiries" className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                  Inquiries
+                </Link>
+              </>
+              ) : ( 
+                <a className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400 cursor-pointer" onClick={() => login()}> 
+                  Sign-In 
+                </a>
+              )}
+              
           </div>
         </div>
       </nav>

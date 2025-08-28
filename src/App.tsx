@@ -6,7 +6,7 @@ import AstelaProject from './AstelaProject.tsx';
 import MergentProject from './MergentProject.tsx';
 import PEPProject from './PEPProject.tsx';
 import ContactUs from './ContactUs.tsx';
-import SignIn from './SignIn.tsx';
+import Inquiries from './Inquiries.tsx';
 import InquireNowModal from './InquireNowModal.tsx'; 
 import React, { useEffect, useState } from 'react';
 
@@ -59,7 +59,7 @@ function App() {
         <Route path="/mergent" element={<MergentProject openModal={openModal} />} />
         <Route path="/pep" element={<PEPProject openModal={openModal} />} />
         <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/inquiries" element={<Inquiries />} />
       </Routes>
       
       {!hideLayout && <Footer />}
