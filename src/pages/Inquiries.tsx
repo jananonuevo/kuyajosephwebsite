@@ -1,6 +1,6 @@
 import React from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { firestore } from "./firebaseConfig.ts";
+import { firestore } from "../firebaseConfig.ts";
 
 function Inquiries() {
 

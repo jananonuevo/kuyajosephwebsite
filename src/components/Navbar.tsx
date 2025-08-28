@@ -9,14 +9,10 @@ const Navbar = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [user, setUser] = useState(null);
   
-  //checks if user is logged in on page load
-  useEffect(() => {
-      // Check if user data exists in localStorage
+  useEffect(() => { //check if user is logged in (find another way to verify log in session as this method is not secure)
       const storedUser = localStorage.getItem('user');
-  
       if (storedUser) {
         try {
-          // Restore the user state from localStorage
           setUser(JSON.parse(storedUser));
           console.log(user, "im logged in!");
           setShowBoolean(true);
@@ -28,7 +24,7 @@ const Navbar = () => {
           localStorage.removeItem('user');
         }
       }
-    }, []); // The empty array ensures this runs only once
+    }, []);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -43,6 +39,7 @@ const Navbar = () => {
     }, 200);
   };
 
+  const validEmail = "jananonuevo7@gmail.com"; //hide this, replace with email ni kuya joseph
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       console.log('Login Success!: ', tokenResponse);
@@ -52,10 +49,14 @@ const Navbar = () => {
       });
       const userData = await userInfoResponse.json();
 
-      // Save the user data to localStorage
-      localStorage.setItem('user', JSON.stringify(userData));
-
-      setShowBoolean(true);
+      if (userData.email !== validEmail) {
+        alert("Unauthorized user. Access denied.");
+        return;
+      } else {
+        alert("Login Successful!");
+        localStorage.setItem('user', JSON.stringify(userData));
+        setShowBoolean(true);
+      }
     },
     onError: (error) => console.log('Login Failed:', error)
   });

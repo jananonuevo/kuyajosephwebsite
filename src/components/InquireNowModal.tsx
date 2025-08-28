@@ -1,5 +1,5 @@
 import React, { useState, type FormEvent } from "react";
-import { firestore } from "./firebaseConfig";
+import { firestore } from "../firebaseConfig";
 import { addDoc, collection } from "@firebase/firestore";
 
 interface InquireNowModalProps {
@@ -8,7 +8,6 @@ interface InquireNowModalProps {
 }
 
 const InquireNowModal: React.FC<InquireNowModalProps> = ({ isOpen, closeModal }) => {
-  // Use a single state object for all form inputs
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,10 +15,8 @@ const InquireNowModal: React.FC<InquireNowModalProps> = ({ isOpen, closeModal })
     inquiry: ""
   });
 
-  // Reference to the Firestore collection
   const ref = collection(firestore, "inquiries");
 
-  // Reusable change handler for all input fields
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -32,12 +29,9 @@ const InquireNowModal: React.FC<InquireNowModalProps> = ({ isOpen, closeModal })
     e.preventDefault();
 
     try {
-      // Save the entire formData object to Firebase
       await addDoc(ref, formData);
       alert("Inquiry sent successfully!");
-      closeModal(); // Close the modal on success
-      
-      // Reset the form state
+      closeModal(); 
       setFormData({ name: "", email: "", contactNo: "", inquiry: "" });
 
     } catch (error) {

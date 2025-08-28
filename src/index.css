@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
-.aleo-700 { /* Replaced <uniquifier> with 'my-aleo-text' */
+.aleo-700 { 
   font-family: "Aleo", serif;
   font-optical-sizing: auto;
-  font-weight: 700; /* Using bold weight for this class */
+  font-weight: 700; 
   font-style: normal;
 }
 
 .aleo-300 {
   font-family: "Aleo", serif;
   font-optical-sizing: auto;
-  font-weight: 300; /* Using light weight for this class */
-  font-style: italic; /* If you imported italic styles */
+  font-weight: 300;
+  font-style: normal; 
 }

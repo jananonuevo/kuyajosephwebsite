@@ -1,7 +1,7 @@
-import Inquire from './LandingComponents/Inquire.tsx';
-import Projects from './LandingComponents/Projects.tsx';
-import Hero from './LandingComponents/Hero.tsx';
-import Showroom from './LandingComponents/Showroom.tsx';
+import Inquire from '../components/landing/Inquire.tsx';
+import Projects from '../components/landing/Projects.tsx';
+import Hero from '../components/landing/Hero.tsx';
+import Showroom from '../components/landing/Showroom.tsx';
 
 interface LandingProps {
   openModal: () => void;

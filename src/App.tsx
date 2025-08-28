@@ -1,13 +1,13 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './Navbar.tsx';
-import Footer from './Footer.tsx';
-import Landing from './Landing.tsx';
-import AstelaProject from './AstelaProject.tsx';
-import MergentProject from './MergentProject.tsx';
-import PEPProject from './PEPProject.tsx';
-import ContactUs from './ContactUs.tsx';
-import Inquiries from './Inquiries.tsx';
-import InquireNowModal from './InquireNowModal.tsx'; 
+import Navbar from './components/Navbar.tsx';
+import Footer from './components/Footer.tsx';
+import Landing from './pages/Landing.tsx';
+import AstelaProject from './pages/AstelaProject.tsx';
+import MergentProject from './pages/MergentProject.tsx';
+import PEPProject from './pages/PEPProject.tsx';
+import ContactUs from './pages/ContactUs.tsx';
+import Inquiries from './pages/Inquiries.tsx';
+import InquireNowModal from './components/InquireNowModal.tsx'; 
 import { useEffect, useState } from 'react';
 
 

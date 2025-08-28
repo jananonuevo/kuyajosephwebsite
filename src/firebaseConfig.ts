@@ -1,9 +1,8 @@
-// File: ./firebaseConfig.ts
-
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
+//find a way to hide all of this info
 const firebaseConfig = {
   apiKey: "AIzaSyB1k-TFM6cFPc6pHaZu5T5opWAIQTSLbJI",
   authDomain: "testing123-9e315.firebaseapp.com",
@@ -14,8 +13,6 @@ const firebaseConfig = {
   measurementId: "G-9Q6TV15FSX",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firestore and EXPORT IT for use in other files
 export const firestore = getFirestore(app);
