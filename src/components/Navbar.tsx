@@ -2,13 +2,30 @@ import { useEffect, useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
 
-const Navbar = () => {
+interface NavBarProps {
+  openModal: () => void;
+  openLogoutModal: () => void;
+}
+
+const NavBar = ({ openModal, openLogoutModal }: NavBarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isShown, setShowBoolean] = useState(false);
   const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [user, setUser] = useState(null);
   
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsProjectsDropdownOpen(true);
+  };
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsProjectsDropdownOpen(false);
+    }, 200);
+  };
+
   useEffect(() => { //check if user is logged in (find another way to verify log in session as this method is not secure)
       const storedUser = localStorage.getItem('user');
       if (storedUser) {
@@ -26,19 +43,6 @@ const Navbar = () => {
       }
     }, []);
 
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setIsProjectsDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsProjectsDropdownOpen(false);
-    }, 200);
-  };
-
   const validEmail = "jananonuevo7@gmail.com"; //hide this, replace with email ni kuya joseph
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
@@ -50,10 +54,9 @@ const Navbar = () => {
       const userData = await userInfoResponse.json();
 
       if (userData.email !== validEmail) {
-        alert("Unauthorized user. Access denied.");
+        openModal(); 
         return;
       } else {
-        alert("Login Successful!");
         localStorage.setItem('user', JSON.stringify(userData));
         setShowBoolean(true);
       }
@@ -64,6 +67,7 @@ const Navbar = () => {
   const logout = () => {
     setShowBoolean(false);
     localStorage.removeItem('user'); 
+    openLogoutModal();
     console.log('User logged out');
   };
 
@@ -71,7 +75,7 @@ const Navbar = () => {
     <header className="w-full text-sm bg-[#27374D]">
       <nav className="max-w-[85rem] w-full mx-auto sm:flex sm:items-center sm:justify-between py-3 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <a className="flex-none font-semibold text-xl sm:text-lg text-white focus:outline-none focus:opacity-80 py-2" href="#" aria-label="Brand">
+          <a className="font-semibold text-xl sm:text-lg text-white focus:outline-none focus:opacity-80 py-2" href="#" aria-label="Brand">
             <img src="/alveologo.png" alt="Company Logo" className="h-5" />
           </a>
           <div className="sm:hidden">
@@ -168,4 +172,5 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
+

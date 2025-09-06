@@ -1,6 +1,7 @@
 import React from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../firebaseConfig.ts";
+import { Link } from "react-router-dom";
 
 function Inquiries() {
 
@@ -21,48 +22,42 @@ function Inquiries() {
   const rows = [];
   for (let i = 0; i < inquiries.length; i++) {
     rows.push(
-      <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          {inquiries[i].name}
-        </th>
-        <td className="px-6 py-4">
-          {inquiries[i].contactNo}
-        </td>
-        <td className="px-6 py-4">
-          {inquiries[i].email}
-        </td>
-        <td className="px-6 py-4">
-          {inquiries[i].inquiry}
-        </td>
-      </tr>
+      <div className = "bg-amber-20 border-t-3 rounded-lg w-100 my-5 shadow-lg">
+        <h1 className = "text-md font-bold mx-4 mt-5">{inquiries[i].name}</h1>
+        <p className = "text-sm mx-4 mt-1">{inquiries[i].contactNo} || {inquiries[i].email}</p>
+        <hr className = "mt-2"></hr>
+        <p className = "text-sm text-center mx-4 my-5">{inquiries[i].inquiry}</p>
+      </div>
     );
   }
   
   return (
     <>
-      <div className="mt-10 mx-10">
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" className="px-6 py-3">
-                    Name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Contact No.
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Email
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Inquiry
-                </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows} 
-          </tbody>
-        </table>
+
+    <div className = "border  bg-[#27374D]">
+      <h1 className = "mx-30 text-2xl mt-7 mb-7 text-white font-bold">Inquiries</h1>
+    </div>
+
+    <div className = "flex justify-center align-items-center ">
+
+      <div className="grid grid-cols-4 gap-5 mt-10">
+
+      <div className = "bg-amber-20 border-t-3 rounded-lg w-100 my-5 shadow-lg">
+        <h1 className = "text-md font-bold mx-4 mt-5">Jan Anonuevo</h1>
+        <p className = "text-sm mx-4 mt-1">0969 231 7498 || jananonuevo7@gmail.com</p>
+        <hr className = "mt-2"></hr>
+        <p className = "text-sm text-center mx-4 my-5">Hello, I would like to inquire about your services. Please let me know how I can get in touch with you. Thank you!</p>
       </div>
+      
+      {rows}
+
+      </div>
+    </div>
+
+    <div className = "mt-15">
+      <Link className = "mx-30 text-xl mt-7 mb-7" to="/">&lt; Back</Link>
+    </div>
+
     </>
   )
 }

@@ -1,13 +1,18 @@
 import React, { useState, type FormEvent } from "react";
-import { firestore } from "../firebaseConfig";
 import { addDoc, collection } from "@firebase/firestore";
+import { firestore } from "../../../firebaseConfig";
 
-interface InquireNowModalProps {
+interface ContentProps {
   isOpen: boolean;
   closeModal: () => void;
 }
 
-const InquireNowModal: React.FC<InquireNowModalProps> = ({ isOpen, closeModal }) => {
+const Content: React.FC<ContentProps> = ({ isOpen, closeModal }) => {
+  if (!isOpen) {
+    return null;
+  }
+
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,9 +30,9 @@ const InquireNowModal: React.FC<InquireNowModalProps> = ({ isOpen, closeModal })
     }));
   };
 
+  // send data to firebase database collection "inquiries"
   const handleSave = async (e: FormEvent) => {
     e.preventDefault();
-
     try {
       await addDoc(ref, formData);
       alert("Inquiry sent successfully!");
@@ -39,32 +44,10 @@ const InquireNowModal: React.FC<InquireNowModalProps> = ({ isOpen, closeModal })
       alert("There was an error sending your inquiry.");
     }
   };
-
-  if (!isOpen) {
-    return null;
-  }
-
+  
   return (
-    <div
-      style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
-    >
-      <div className="relative w-full max-w-md p-6 mx-auto transition-all duration-100 ease-in-out transform scale-100 bg-white rounded-lg shadow-2xl">
-        <div className="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-600">
-          <h3 className="text-xl font-bold">
-            Inquire Now!
-          </h3>
-          <button
-            type="button"
-            onClick={closeModal}
-            className="text-gray-400 transition-colors duration-200 ease-in-out rounded-lg hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-700 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
-          >
-            <svg className="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-            <span className="sr-only">Close modal</span>
-          </button>
-        </div>
+    <>
+        {/* Modal Content */}
         <div className="py-4">
           <form onSubmit={handleSave}>
             <div className="relative z-0 w-full mb-5 group">
@@ -118,9 +101,10 @@ const InquireNowModal: React.FC<InquireNowModalProps> = ({ isOpen, closeModal })
             </center>
           </form>
         </div>
-      </div>
-    </div>
+        {/* END Modal Content */}
+        </>
   );
+  
 };
 
-export default InquireNowModal;
+export default Content;

@@ -1,9 +1,10 @@
-function Inquire() {
+import { useState } from 'react';
+import MessageModal from '../modals/Message.tsx'; 
 
+function Inquire() {
   return (
     <>
-    
- 
+
   <div className = "w-full bg-[#27374D] mt-30">
       
     <div className = "flex justify-center">
@@ -12,7 +13,10 @@ function Inquire() {
         <h1 className="font-bold text-5xl text-white">I'm Joseph! Your trusted Real Estate Salesperson.</h1>
         <p className="mt-10 text-lg text-white">Hi! I'm Joseph Muñoz, and I have been in the real estate industry for several years now. I am committed to helping clients choose the right home for them, and or the best investment that would really ensure their money's worth. 
           As an accredited real estate salesperson (PRC Details down below), it is my duty to make sure that your home is a reflection of how you wish your future would be. Let's go!</p>
-        <button className="mt-10 bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-10 border border-white hover:border-transparent rounded">Inquire Now!</button>
+        
+          <button /* onClick={openModal} */ className="mt-10 bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-10 border border-white hover:border-transparent rounded">
+            Inquire Now!
+          </button>
       </div>
 
       <div className = "hidden sm:hidden md:hidden lg:block">
@@ -25,7 +29,6 @@ function Inquire() {
 
   </div>
    
-
     </>
   )
 }
