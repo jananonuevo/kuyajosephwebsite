@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import MessageModal from '../modals/Message.tsx'; 
-
 function Inquire() {
   return (
     <>

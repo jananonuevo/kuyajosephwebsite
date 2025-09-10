@@ -1,4 +1,4 @@
-import React, { useState, type FormEvent } from "react";
+import React from "react";
 import Content from "./inquirenow/Content";
 import Header from "./inquirenow/Header";
 

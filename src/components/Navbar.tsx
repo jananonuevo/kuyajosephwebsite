@@ -1,8 +1,6 @@
 import { useEffect, useState, useRef} from 'react';
-import { data, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
-import { auth, provider } from '../firebaseConfig';
-import { getAuth, GoogleAuthProvider, signInWithCredential, signInWithPopup } from 'firebase/auth';
 
 interface NavBarProps {
   openModal: () => void;
