@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef} from 'react';
-import { Link } from 'react-router-dom';
+import { data, Link } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
+import { auth, provider } from '../firebaseConfig';
+import { getAuth, GoogleAuthProvider, signInWithCredential, signInWithPopup } from 'firebase/auth';
 
 interface NavBarProps {
   openModal: () => void;
@@ -36,33 +38,44 @@ const NavBar = ({ openModal, openLogoutModal }: NavBarProps) => {
         } catch (e) {
           console.log("nope, no one's logged in!");
           console.error("Failed to parse stored user data:", e);
-          
-          setShowBoolean(true);
           localStorage.removeItem('user');
         }
       }
     }, []);
 
-  const validEmail = "jananonuevo7@gmail.com"; //hide this, replace with email ni kuya joseph
-  const login = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
-      console.log('Login Success!: ', tokenResponse);
-      
-      const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-        headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
-      });
-      const userData = await userInfoResponse.json();
+const validEmail = "jananonuevo7@gmail.com"; 
+/*const login =()=>{
+  signInWithPopup(auth,provider).then((data)=>{
+    if (data.user.email === validEmail) {
+      localStorage.setItem('user', data.user.email);
+      setShowBoolean(true);
+      console.log("login success?");
+    } else {
+      openModal();
+      console.log("not allowed");
+    }
+  })
+};*/
 
-      if (userData.email !== validEmail) {
-        openModal(); 
-        return;
-      } else {
-        localStorage.setItem('user', JSON.stringify(userData));
-        setShowBoolean(true);
-      }
-    },
-    onError: (error) => console.log('Login Failed:', error)
-  });
+const login = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+    console.log('Login Success!: ', tokenResponse);
+    
+    const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+      headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
+    });
+    const userData = await userInfoResponse.json();
+
+    if (userData.email !== validEmail) {
+      openModal(); 
+      return;
+    } else {
+      localStorage.setItem('user', JSON.stringify(userData));
+      setShowBoolean(true);
+    }
+  },
+  onError: (error) => console.log('Login Failed:', error)
+});
 
   const logout = () => {
     setShowBoolean(false);
