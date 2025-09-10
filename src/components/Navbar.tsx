@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
+import { signInWithPopup } from 'firebase/auth';
+import { auth, provider } from '../firebaseConfig';
 
 interface NavBarProps {
   openModal: () => void;
@@ -42,7 +44,7 @@ const NavBar = ({ openModal, openLogoutModal }: NavBarProps) => {
     }, []);
 
 const validEmail = "jananonuevo7@gmail.com"; 
-/*const login =()=>{
+const login =()=>{
   signInWithPopup(auth,provider).then((data)=>{
     if (data.user.email === validEmail) {
       localStorage.setItem('user', data.user.email);
@@ -53,9 +55,9 @@ const validEmail = "jananonuevo7@gmail.com";
       console.log("not allowed");
     }
   })
-};*/
+};
 
-const login = useGoogleLogin({
+/*const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
     console.log('Login Success!: ', tokenResponse);
     
@@ -73,7 +75,7 @@ const login = useGoogleLogin({
     }
   },
   onError: (error) => console.log('Login Failed:', error)
-});
+});*/
 
   const logout = () => {
     setShowBoolean(false);
