@@ -2,8 +2,7 @@ import { useEffect, useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
 //import { useGoogleLogin } from '@react-oauth/google';
 import { signInWithPopup } from 'firebase/auth';
-import { auth, firestore, provider } from '../firebaseConfig';
-import { collection, doc, getDoc } from 'firebase/firestore';
+import { auth, provider } from '../firebaseConfig';
 
 interface NavBarProps {
   openModal: () => void;
@@ -98,7 +97,7 @@ const login =()=>{
           id="mobile-menu"
           className={`${
             isOpen ? 'block' : 'hidden'
-          } sm:block sm:flex sm:flex-row sm:items-center sm:justify-end sm:gap-5 absolute sm:static bg-[#27374D] w-full left-0 z-20 transition-all duration-300 ease-in-out`}
+          } sm:flex sm:flex-row sm:items-center sm:justify-end sm:gap-5 absolute sm:static bg-[#27374D] w-full left-0 z-20 transition-all duration-300 ease-in-out`}
         >
           <div className="flex flex-col gap-5 p-4 sm:flex-row sm:p-0">
             <Link className="font-medium text-white hover:text-gray-400 focus:outline-none focus:text-gray-400" to="/">
