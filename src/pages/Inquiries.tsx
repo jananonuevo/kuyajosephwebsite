@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { firestore } from "../firebaseConfig.ts";
 import { Link } from "react-router-dom";
 
-function Inquiries() {
-  
+function Inquiries() {    
   const [inquiries, setInquiries] = React.useState<any[]>([]);
 
   async function getCollections() {

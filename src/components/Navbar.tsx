@@ -2,7 +2,8 @@ import { useEffect, useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
 //import { useGoogleLogin } from '@react-oauth/google';
 import { signInWithPopup } from 'firebase/auth';
-import { auth, provider } from '../firebaseConfig';
+import { auth, firestore, provider } from '../firebaseConfig';
+import { collection, doc, getDoc } from 'firebase/firestore';
 
 interface NavBarProps {
   openModal: () => void;
@@ -43,39 +44,20 @@ const NavBar = ({ openModal, openLogoutModal }: NavBarProps) => {
       }
     }, []);
 
-const validEmail = "jananonuevo7@gmail.com"; 
+const validEmail = import.meta.env.VITE_VALID_EMAIL;
 const login =()=>{
   signInWithPopup(auth,provider).then((data)=>{
     if (data.user.email === validEmail) {
-      localStorage.setItem('user', data.user.email);
+      localStorage.setItem('user', JSON.stringify({ email: data.user.email }));
       setShowBoolean(true);
       console.log("login success?");
+      console.log("logged in is: ", localStorage.getItem('user'));
     } else {
       openModal();
       console.log("not allowed");
     }
   })
 };
-
-/*const login = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
-    console.log('Login Success!: ', tokenResponse);
-    
-    const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-      headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
-    });
-    const userData = await userInfoResponse.json();
-
-    if (userData.email !== validEmail) {
-      openModal(); 
-      return;
-    } else {
-      localStorage.setItem('user', JSON.stringify(userData));
-      setShowBoolean(true);
-    }
-  },
-  onError: (error) => console.log('Login Failed:', error)
-});*/
 
   const logout = () => {
     setShowBoolean(false);
